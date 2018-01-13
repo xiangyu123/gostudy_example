@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 type A func(int, int)
+
 fmt.Printf("%T\n", A)
 
 func (f A)Serve() {
