@@ -41,3 +41,6 @@ func (sq *Square) Area() float32 {
 func (ci *Circle) Area() float32 {
 	return ci.radius * ci.radius * math.Pi
 }
+
+// 如果忽略 areaIntf.(*Square) 中的 * 号，会导致编译错误：impossible type assertion: Square does not implement Shaper (Area method has pointer receiver)
+// 因为是*Square实现了Shaper接口，而不是Square实现了Shaper接口
