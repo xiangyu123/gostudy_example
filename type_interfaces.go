@@ -17,6 +17,14 @@ type Shaper interface {
 	Area() float32
 }
 
+func (sq *Square) Area() float32 {
+	return sq.side * sq.side
+}
+
+func (ci *Circle) Area() float32 {
+	return ci.radius * ci.radius * math.Pi
+}
+
 func main() {
 	var areaIntf Shaper
 	sq1 := new(Square)
@@ -32,14 +40,6 @@ func main() {
 	} else {
 		fmt.Println("areaIntf does not contain a variable of type Circle")
 	}
-}
-
-func (sq *Square) Area() float32 {
-	return sq.side * sq.side
-}
-
-func (ci *Circle) Area() float32 {
-	return ci.radius * ci.radius * math.Pi
 }
 
 // 如果忽略 areaIntf.(*Square) 中的 * 号，会导致编译错误：impossible type assertion: Square does not implement Shaper (Area method has pointer receiver)
