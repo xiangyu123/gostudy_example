@@ -65,6 +65,7 @@ func main() {
 	}
 	fmt.Printf("%s\n", deptPtr1.Name())
 }
+
 /*
 The dept1 is a DeptModeA.
 The deptPtr1 is a DeptModeFull.
